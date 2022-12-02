@@ -4,10 +4,13 @@ import { useActions } from "./hooks/useActions";
 import { useTypedSelector } from "./hooks/useTypedSelector";
 import { Error } from "./components/Error";
 import { Loader } from "./components/Loader";
+import { useDispatch } from "react-redux";
+import { addCurrencyListAction } from "./actions/actions";
 
 const App: React.FC = () => {
   const { fetchAddCurrencyListAction } = useActions();
   const appSettings = useTypedSelector((state) => state.app);
+  const dispatch = useDispatch();
   const currencyState = useTypedSelector(
     (state) => state.currency.currencyList
   );

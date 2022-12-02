@@ -6,7 +6,7 @@ import { useActions } from "../hooks/useActions";
 
 export const Selection: React.FC<IReadonlyProps> = ({ isReadonly }) => {
   const currencyState = useTypedSelector((state) => state.currency);
-  const currencyList = currencyState.currencyList;
+  const currencyList = useTypedSelector((state) => state.currency.currencyList);
 
   const valueCurrencyTo = currencyState.valueCurrencyTo;
   const valueCurrencyFrom = currencyState.valueCurrencyFrom;

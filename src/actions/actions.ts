@@ -28,6 +28,7 @@ export function fetchAddCurrencyListAction() {
       }));
 
       localStorage.setItem("localCurrency", JSON.stringify(typedRequire));
+      dispatch(addCurrencyListAction(typedRequire));
       dispatch(setLoadingAction(false));
       return typedRequire;
     } catch (e: AxiosError | any) {
