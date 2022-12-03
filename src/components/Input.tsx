@@ -19,22 +19,10 @@ export const Input: React.FC<IReadonlyProps> = ({ isReadonly }) => {
       setConvertedNumberAction(0);
       setValueNumberAction("");
     } else {
-      if (currencyTo?.value === "UAH") {
-        let finishedValue =
-          currencyTo!.rate * currencyFrom!.rate * parseFloat(e.target.value);
-        setConvertedNumberAction(finishedValue);
-        setValueNumberAction(e.target.value);
-      } else if (currencyFrom?.value === "UAH") {
-        let finishedValue =
-          (currencyFrom!.rate / currencyTo!.rate) * parseFloat(e.target.value);
-        setConvertedNumberAction(finishedValue);
-        setValueNumberAction(e.target.value);
-      } else {
-        let finishedValue =
-          (currencyTo!.rate / currencyFrom!.rate) * parseFloat(e.target.value);
-        setConvertedNumberAction(finishedValue);
-        setValueNumberAction(e.target.value);
-      }
+      let finishedValue =
+        (currencyFrom!.rate / currencyTo!.rate) * parseFloat(e.target.value);
+      setConvertedNumberAction(finishedValue);
+      setValueNumberAction(e.target.value);
     }
   };
 
