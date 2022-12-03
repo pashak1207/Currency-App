@@ -19,7 +19,7 @@ export function fetchAddCurrencyListAction() {
         txt: "Українська гривня",
         rate: 1,
         cc: "UAH",
-        exchangedate: "02.12.2022",
+        exchangedate: new Date(Date.now()).toLocaleDateString(),
       });
       const typedRequire = require.data.map((item: ICurrencyObj) => ({
         ...item,
